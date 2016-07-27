@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>商品详情(已下架)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <link href="../../loft-mobile/dist/css/loft-mobile-default.min.css" rel="stylesheet"> 
+    <link href="css/main.css" rel="stylesheet">
+    <script type="text/javascript" src='../../loft-mobile/dist/js/loft-mobile-all.min.js'></script>    
+</head>
+
+<body >
+    <!--商品详情页面-->
+    <section class="pro-detail">
+      <!--商品图片-->
+      <div class="pro-img">
+        <img id="thumbnailImage" src="http://image.huijiacn.com/1400071471055872.jpg">      
+      </div>
+
+      <!--商品标题-->
+      <div class="pro-tit">
+        <p>浩聚玻璃水1.8L装</p>
+        <p class='pro-tit-2'>优异的抗老化性 高效抗金属腐蚀功能 超强去污能力</p>
+        <p ><span class='red-txt'>￥10.00 </span> <span class='grey-tit'>￥15.00</span></p>
+        <ul class="pro-tit-list">
+          <li>月销量：223 </li>
+          <li>累计评价：223 </li>
+          <li>收藏数：223 </li>
+        </ul>
+      </div>
+     
+
+     <div class="grey-bg"></div>
+      <!--商品属性-->
+      <div class="product-pro">
+           <!--属性-->
+           <div class="goods-write">
+                <div class="item-form">属性</div>
+                 <div class="item-text">
+                     <p>优质玻璃水</p>
+                     <p>嘉实多（Castrol）银嘉护 10W-40 4L机油润滑油SM</p>
+                 </div>
+                <div class="clr"></div>  
+           </div>
+
+           <!--数量-->
+            <div class="goods-write">
+                <div class="item-form">数量</div>
+                 <div class="quantity">
+                      <a class="reduce" id="reduceCountBtn">-</a>
+                      <input type="tel" title="请输入购买量" maxlength="8" readonly="true" value="1" class="text" id="count">
+                      <a class="add" id="addCountBtn">+</a>
+                 </div>
+                <div class="clr"></div>
+                 
+            
+           </div>
+
+           <div class="goods-write">
+                <div class="item-form">送至 </div>
+                 <div class="item-text">
+                    <select id='province'>
+                        <option>江苏省</option>
+                     </select> 
+                 </div>
+                <div class="clr"></div>  
+                <img src="images/jiantou.png" alt='' class="item-arror" />
+           </div>
+
+           <div class="goods-write no-btm-border">
+                <div class="item-form">运费 </div>
+                 <div class="item-text item-cor-org">
+                    20元 
+                 </div>
+                <div class="clr"></div>  
+                
+           </div>
+   
+
+    </div>
+    
+    <!--继续拖动查看图文详情-->
+    <div class="more-detail">
+      <div class="more-detail-hit"><p>继续拖动，查看图文详情</p></div>
+    </div>
+
+   
+
+     <!--订单-->
+    <div class="order"><img src='images/icon-order.png' alt='订单'/></div>
+
+
+   <!--已下架的提示-->
+    
+      <div class="off-shelf-shadow"></div>
+      <p class="off-shelf-hit">已下架</p>
+    
+    <!--购物车 下单等按钮-->
+    <div class='btm-box'>
+      <ul class='btm-box-list'>
+        <li class="twoSm-1 rightBorder">
+          <p class='sm-icon unfavior'></p> <!--如果是已经收藏 class为favior-->
+          <p class="btm-box-mb">收藏</p>
+        </li>
+
+        <li class="twoSm-1">
+          <p class='sm-icon shopCar'></p> 
+          <p class="btm-box-mb">购物车</p>
+        </li>
+
+        <li class="twoSm-2 btm-bg1"><p class="xiajia">加入购物车</p></li>
+        <li class="twoSm-2 btm-bg2"><p class="xiajia">立即购买</p></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+      
+    </section>          
+             
+</body>
+
+
+
+</html>

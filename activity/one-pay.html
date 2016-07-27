@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no"/>
+<link href="../css/one-wash.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+span.emptyhint {color:#999;position:absolute;padding:3px;}
+.rDialog {font-size: 0.2rem;}
+</style>
+<script type="text/javascript">
+!function(a,b){var c=a.documentElement,d="orientationchange"in window?"orientationchange":"resize",e=function(){var a=c.clientWidth;a&&(c.style.fontSize=100*(a/320)+"px")};a.addEventListener&&(b.addEventListener(d,e,!1),a.addEventListener("DOMContentLoaded",e,!1))}(document,window);
+var _hmt = _hmt || [];
+!function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?0ee6bc849175afaa01d8691eddf104d5";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);}();
+_hmt.push(['_setAutoPageview', false]);
+</script>
+<title>慧驾一元洗车</title>
+</head>
+<body>
+<div class="header">
+    <img class="union" src="../images/one-wash/union.png" />
+    <img class="logo" src="../images/one-wash/logo.png" />
+    <div class="bgcar"></div>
+</div>
+<a id="toDown" class="toDown"><img src="images/down.png" /></a>
+<div class="form_box">
+    <div class="item un_login">
+        <input id="phone" type="tel" class="tel" placeholder="请输入手机号码" />
+        <input id="checkCodeBtn" type="button" class="getcode" value="获取验证码" />
+    </div>
+    <div class="item un_login">
+        <input id="checkCode" type="tel" class="writecode" placeholder="请输入验证码" />
+    </div>
+    <div id="login_er" class="item" style="display: none;">
+        <span class="now-login">当前登录用户为:</span>
+        <h2 id="user_phone">183 62560 7654</h2>
+        <input id="change_user" type="button" value="更换号码" class="changetel" style="width: 0.8rem;"/>
+    </div>
+    <label>信用卡号</label>
+    <div class="item">
+        <input id="card" type="tel" class="cardNum" placeholder="请输入62开头银联信用卡" />
+    </div>
+    <div id="errorInfo" class="tip_box" style="display:none;">
+        <img src="../images/one-wash/tip.png" /><span>抱歉，此次活动支付仅支持62开头银联信用卡</span>
+    </div>
+    <div class="remember"><input id="rem_btn" name="" type="checkbox" value=""/>记住卡号，下次自动填写</div>
+    <div class="item btnRow">
+        <input id="submitBtn" type="button" class="buy_btn" value="立即购买" />
+    </div>
+</div>
+
+<div id="callFirendsBtnDiv" class="call_box" style="display:none;"><a id="callFirendsBtn" class="call_friends">没有银联卡，召唤小伙伴支付>></a></div>
+
+<div class="rule_box">
+    <div style="color: #FFF;font-size: 0.14rem;padding: 5px 10px;">
+        <label>温馨提示：</label>
+        <p style="font-size: 0.12rem;">尊敬的慧驾会员，春节期间（2月5日-2月15日）慧驾1元洗 车券将无法使用，敬请谅解！</p>
+    </div>
+    
+    <h3><img src="../images/one-wash/rule.png" class="rule_icon" />24小时客服电话:</h3>
+    <a class="tel-a">4008 908 108</a>
+    <h3><img src="images/rule.png" class="rule_icon" />活动规则:</h3>
+    <p>1. 所有银联62信用卡卡主均可参加银联慧驾1元洗车活动；</p>
+    <p>2. 每用户每月可参加两次活动，每天限1次，洗车券有效期为1个月，逾期未使用将全额退款；</p>
+    <p>3. 本券仅限5座及5座以下小轿车普洗，如超出请自行与商家协商补齐差价； </p>
+    <!--<p>4. 参与流程：选购洗车商品->手机验证支付->获取洗车券二维码->到店洗车扫码支付；</p>-->
+    <!--<p>5. 活动名额有限，先到先得；</p>-->
+    <p>6. 更多活动详情请拨打客服电话<a href="tel:02596588">（025）96588</a>进行咨询；</p>
+    <p>7. 本次活动最终解释权归联创车盟汽车服务有限公司所有。</p>
+</div>
+
+<div id="callFirendsDiv" class="call_friends_box" style="display:none;z-index:10000;">
+    <h3>提示</h3>
+    <div class="phone_box">
+        <p>验证手机号，小伙伴才知道你是谁哦。</p>
+        <div class="item">
+            <input id="cf_phone" type="tel" class="tel" placeholder="请输入手机号码">
+            <input id="cf_checkCodeBtn" type="button" class="getcode" value="获取验证码">
+        </div>
+        <div class="item">
+            <input id="cf_checkCode" type="tel" class="writecode" placeholder="请输入验证码">
+        </div>
+    </div>
+    <div class="cf_tip_box" id="cf_errorInfo" style="display:none;">*<span></span></div>
+    <div class="btns">
+        <a id="cf_cancel" class="phone_cancel">取消</a>
+        <a id="cf_check" class="phone_sure">验证</a>
+    </div>
+</div>
+<div class="U-guodu-box" style="display: none;">
+    <div>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" >
+            <tr><td  align="center"><img src="../images/one-wash/alert-loading.gif" style="width: .5rem;"></td></tr>
+            <tr><td  valign="middle" align="center" >正在为您跳转银联支付，请稍候...</td></tr>
+        </table>
+    </div>
+</div>
+<div id="zz" style="display:none;"></div>
+</body>
+</html>

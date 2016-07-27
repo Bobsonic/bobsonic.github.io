@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>支付页面</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+    body {
+        font-family: 'Microsoft YaHei,SimHei,BrixSansMedium,Helvetica,sans-serif';
+        background-color: #f8f8f8;
+    }
+    
+    .split {
+        height: 1rem;
+        border-bottom: 1px solid #dadada;
+    }
+    
+    .hjpay_header {
+        background-color: #fff;
+        padding: 1rem 1.5rem 0;
+        border-bottom: 1px solid #dadada;
+    }
+    
+    .hjpay_header_title {
+        border-bottom: 1px dashed #dddddd;
+        line-height: 2.5rem;
+    }
+    
+    .hjpay_header_title1 {
+        font-size: 1.5rem;
+    }
+    
+    .hjpay_header_title2 {
+        position: relative;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hjpay_header_title2 span {
+        position: absolute;
+        right: 0;
+        font-size: 1.5rem;
+    }
+    
+    .hjpay_header_price {
+        position: relative;
+        font-size: 1.5rem;
+        line-height: 3rem
+    }
+    
+    .price1 {
+        position: absolute;
+        right: 0;
+    }
+    
+    .price2 {
+        font-size: 1.2rem
+    }
+    
+    .hjpay_content {
+        background-color: #fff;
+        padding: 0 1.5rem;
+        border-bottom: 1px solid #dadada;
+        margin-bottom: 6rem;
+    }
+    
+    .hjpay_content_step {
+        padding: 1.5rem 0;
+    }
+    
+    .step_bottom {
+        border-bottom: 1px solid #dadada;
+    }
+    
+    .hjpay_content_step1 {
+        position: relative;
+        font-size: 1.5rem;
+    }
+    
+    .hjpay_content_step1 img {
+        position: absolute;
+        right: 0;
+        top: 1rem;
+        height: 1.5rem;
+        width: 0.85rem;
+    }
+    
+    .hjpay_content_step2 {
+        font-size: 1.3rem;
+    }
+    
+    .hjpay_content_step2 span {
+        color: #fc832c;
+        font-size: 1.5rem;
+    }
+    
+    .switch1 {
+        position: absolute;
+        top: 0.8rem;
+        right: 0;
+        border-radius: 1rem;
+        border: 1px solid #dadada;
+        display: inline-block;
+        height: 2.1rem;
+        width: 3.5rem;
+    }
+    
+    .checked {
+        background-color: #9ce566;
+    }
+    
+    .switch2 {
+        background-color: #fff;
+        position: absolute;
+        left: -1px;
+        top: -1.6px;
+        border-radius: 1rem;
+        border: 1px solid #dadada;
+        display: inline-block;
+        height: 2rem;
+        width: 2rem;
+        box-shadow: 0 2px 1px #dadada;
+    }
+    
+    .hjpay_footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 0 1rem;
+        height: 5rem;
+        line-height: 5rem;
+        background-color: #fff;
+        font-size: 1.8rem;
+        border-top: 1px solid #dadada;
+    }
+    
+    .needPayPrice {
+        display: inline-block;
+    }
+    
+    .hjpay_footer1 {
+        position: relative;
+    }
+    
+    .hjpay_footer2 {
+        position: absolute;
+        right: 0;
+        color: #fc6e08;
+    }
+    
+    .hjpay_footer2 span {
+        font-size: 1.4rem;
+    }
+    
+    .hjpay_footer2 button {
+        border: none;
+        background-color: #d94234;
+        width: 8rem;
+        height: 3.2rem;
+        color: #fff;
+        border-radius: 2px;
+        font-size: 2rem;
+    }
+    
+    .hjpay_box_mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #888;
+        z-index: 1001;
+        opacity: 0.5!important;
+    }
+    
+    .hjpay_box {
+        position: fixed;
+        top: 25%;
+        left: 10%;
+        width: 80%;
+        background: #fff;
+        z-index: 10000;
+    }
+    
+    .hjpay_box_header {
+        padding: 1rem 0 0.5rem 1rem;
+        border-bottom: 1px solid #b9e4bb;
+    }
+    
+    .hjpay_box_title {
+        display: inline-block;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+    }
+    
+    .hjpay_box_close {
+        display: inline-block;
+        background: url('images/close.png')no-repeat;
+        background-size: 1.8rem 1.8rem;
+        height: 2rem;
+        width: 2rem;
+        position: absolute;
+        right: 0.5rem;
+        top: 0.8rem;
+    }
+    
+    .hjpay_box_com {
+        text-align: center;
+        font-size: 1.2rem;
+        margin: 1rem 1rem 0;
+        white-space: normal;
+    }
+    
+    .hjpay_box_price {
+        text-align: center;
+        font-size: 2.5rem;
+        border-bottom: 1px solid #dadada;
+        margin: 0 1rem 0 1rem;
+    }
+    
+    .hjpay_box_type {
+        margin: 0 1.5rem 0 1.5rem;
+        line-height: 3rem;
+        font-size: 1.4rem;
+        border-bottom: 1px solid #dadada;
+    }
+    
+    .hjpay_box_type img {
+        display: inline-block;
+        position: relative;
+        top: 0.4rem;
+        width: 2rem;
+        margin-right: 1rem;
+    }
+    
+    .hjpay_box_pwd {
+        width: 240px;
+        text-align: center;
+        margin: 1rem auto 1.5rem;
+        height: 3.5rem;
+        position: relative;
+    }
+    
+    .hjpay_box_pwd_div {
+        vertical-align: top;
+        display: inline-block;
+        text-align: center;
+        border-top: 1px solid #b7b7b7;
+        border-bottom: 1px solid #b7b7b7;
+        border-left: 1px solid #b7b7b7;
+        height: 39px;
+        line-height: 39px;
+        width: 39px;
+    }
+    
+    .hjpay_box_pwd_div_last {
+        border-right: 1px solid #b7b7b7;
+    }
+    
+    #pwd {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 240px;
+        height: 39px;
+        color: rgba(0, 0, 0, 0);
+        border: rgba(0, 0, 0, 0);
+        background: rgba(0, 0, 0, 0);
+    }
+    
+    .hjpay_box_dot {
+        margin: 16px 2px 0;
+        width: 10px;
+        height: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background-clip: padding-box;
+        background-color: #000;
+        z-index: 10000;
+        display: none;
+        font-style: normal;
+    }
+    </style>
+    <script type="text/javascript" src="../hjxc/js/jquery-1.8.0.min.js"></script>
+</head>
+
+<body>
+    <div class="split"></div>
+    <div class="hjpay_header">
+        <div class="hjpay_header_title">
+            <div class="hjpay_header_title1">
+                智慧果 DM1 智能车载空气净化器
+            </div>
+            <div class="hjpay_header_title2">
+                智慧果 DM1 智能车载空气净化器<span>x1</span></div>
+        </div>
+        <div class="hjpay_header_price">总价<span class="price1">￥100<span class="price2">.00</span>
+            </span>
+        </div>
+    </div>
+    <div class="split"></div>
+    <div class="hjpay_content">
+        <div class="hjpay_content_step">
+            <div class="hjpay_content_step1">用慧驾币支付<span class="switch1"><span class="switch2"></span></span>
+            </div>
+            <div class="hjpay_content_step2">
+                可用 0元，已用
+                <span>0</span>元
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="hjpay_footer">
+        <div class="hjpay_footer1">
+            <div class="hjpay_footer2">还需支付:￥
+                <div class="needPayPrice">
+                    100
+                </div><span>.00</span>
+                <button>确认</button>
+            </div>
+        </div>
+    </div>
+    <div class="hjpay_box" style="display: none">
+        <div class="hjpay_box_header">
+            <div class="hjpay_box_title">请输入支付密码</div>
+            <div class="hjpay_box_close"></div>
+        </div>
+        <div class="hjpay_box_com">南京同记五座全车打蜡</div>
+        <div class="hjpay_box_price">￥0.01</div>
+        <div class="hjpay_box_type"><img src="../huijia/about/images/intro1.png">慧驾币</div>
+        <div class="hjpay_box_pwd">
+            <div class="hjpay_box_pwd_div"><i class="hjpay_box_dot"></i>
+            </div><div class="hjpay_box_pwd_div"><i class="hjpay_box_dot"></i>
+            </div><div class="hjpay_box_pwd_div"><i class="hjpay_box_dot"></i>
+            </div><div class="hjpay_box_pwd_div"><i class="hjpay_box_dot"></i>
+            </div><div class="hjpay_box_pwd_div"><i class="hjpay_box_dot"></i>
+            </div><div class="hjpay_box_pwd_div hjpay_box_pwd_div_last"><i class="hjpay_box_dot"></i>
+            </div>
+            <input id="pwd" type="tel" maxlength="6" autocomplete="off" />
+        </div>
+    </div>
+    <div class="hjpay_box_mask" style="display:none;"></div>
+</body>
+<script type="text/javascript">
+$(function() {
+    //慧驾币数量
+    var totalHuiJiaCoin=10;
+    //switch按钮选择
+    $('.switch1').on('touchend', function() {
+        if (totalHuiJiaCoin != 0) {
+            if ($(this).hasClass('checked')) {
+                $(this).children('.switch2').animate({
+                    left: '-1px'
+                }, 80);
+                $(this).removeClass('checked');
+            } else {
+                $(this).children('.switch2').animate({
+                    left: '1.4rem'
+                }, 80);
+                $(this).addClass('checked');
+                $('.hjpay_box').fadeIn(200);
+                $('.hjpay_box_mask').fadeIn(200);
+                $('.hjpay_box').css('top', '25%');
+            }
+        } else {
+
+        }
+    });
+    $('#pwd').on('focus', function() {
+        $('.hjpay_box').css('top', '2rem');
+    });
+
+    $('#pwd').on('input', function() {
+        var pwd = $('#pwd').val();
+        console.log(pwd);
+        var lgth = pwd.length;
+        $('.hjpay_box_dot').hide();
+        $('.hjpay_box_dot').each(function(index) {
+            if (index < lgth) {
+                $(this).css('display', 'inline-block');
+            }
+        })
+        if (lgth == 6) {
+            if (pwd == '123456') {
+                alert("success")
+            } else {
+                alert('fail');
+                $('.hjpay_box_dot').hide();
+                $('#pwd').val('');
+            }
+        }
+    });
+
+    $('.hjpay_box_close').on('touchend', function() {
+        $('.hjpay_box').hide();
+        $('.hjpay_box_mask').hide();
+        $('.hjpay_box_dot').hide();
+        $('#pwd').val('');
+        //switch按钮取消
+        $('.switch1').children('.switch2').animate({
+            left: '-1px'
+        }, 80);
+        $('.switch1').removeClass('checked');
+
+    });
+});
+</script>
+
+</html>

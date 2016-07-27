@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>支付页面</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <link href="../../loft-mobile/dist/css/loft-mobile-default.min.css" rel="stylesheet"> 
+    <link href="css/main.css" rel="stylesheet">
+    <script type="text/javascript" src='../../loft-mobile/dist/js/loft-mobile-all.min.js'></script>    
+</head>
+
+<body style="background:#f8f8f8">
+<!--支付金额-->
+<div class="pay-money"> 
+  <p class='left'>请支付金额</p>
+  <p class='right '>￥1.00</p>
+</div>
+<div class="clr"></div>
+
+<!--选择支付方式-->
+<div class="pay-way">
+  <div class="pay-way-tit">选择支付方式</div>
+  <div class="pay-list-wrap">
+    <div class="pay-list">
+       <img src='images/zhifubao.png' alt='银联卡'>
+       <div class="pay-list-cnt">
+         <p>支付宝付款</p>
+       </div>
+       <div class="clr"></div>
+       <div class="radio-input check" id='zfb'></div>
+    </div>
+
+    <div class="pay-list">
+       <img src='images/yl.png' alt='银联卡'>
+       <div class="pay-list-cnt">
+         <p>银联卡支付</p>
+       </div>
+       <div class="clr"></div>
+       <div class="radio-input" id='ylk'></div>
+    </div>
+
+  </div>
+</div>
+   
+<!--支付按钮-->
+<div class="pay-btn">确认支付</div>
+
+             
+</body>
+
+
+
+</html>
